@@ -1,0 +1,296 @@
+using Godot;
+using System;
+
+public partial class Player : CharacterBody2D
+{
+
+    [Export]
+    public const float Speed = 300.0f;
+    public bool IsSurvive = true;
+    public double delta;
+
+    public const float JumpVelocity = -400.0f;
+
+    public PlayerState State { get; private set; }
+
+    [Export]
+    public AnimatedSprite2D animatedSprite2D;
+
+    // Get the gravity from the project settings to be synced with RigidBody nodes.
+    public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+
+
+
+    public override void _Input(InputEvent @event)
+    {
+        // if (@event is InputEventKey eventKey)
+        // {
+        //     if (eventKey.IsActionPressed("ui_cancel")   // Pressed Escape.
+        //         || eventKey.IsActionPressed("ui_select") // Pressed Enter.
+        //         || eventKey.IsActionPressed("ui_pause")) // Pressed Space.
+        //     {
+        //         GetTree().Quit();
+        //     }
+        // }
+        if (@event is InputEventKey eventKey)
+        {
+            //检测左右移动
+            if (eventKey.IsActionPressed("Left"))
+            {
+                Velocity = new Vector2(-Speed, Velocity.Y);
+                GD.Print("Move Left");
+            }
+            if (eventKey.IsActionPressed("Right"))
+            {
+                Velocity = new Vector2(Speed, Velocity.Y);
+                GD.Print("Move Right");
+            }
+            //弹开取消移动
+            if (eventKey.IsActionReleased("Left") || eventKey.IsActionReleased("Right"))
+            {
+                Velocity = new Vector2(0, Velocity.Y);
+                GD.Print("Stop Move");
+            }
+            //检测攻击  
+            if (eventKey.IsActionPressed("Attack"))
+            {
+                GD.Print("Attack");
+            }
+            //检测跳跃
+            if (eventKey.IsActionPressed("Jump"))
+            {
+                GD.Print("Jump");
+            }
+
+        }
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {
+
+        this.delta = delta;
+        // Add gravity.
+        // AddGravity();
+        //Flip X  when change direction
+        ChangeFlipH();
+        //Change the state of the player
+        ChangePlayState();
+
+        // Handle the state machine.
+        switch (State)
+        {
+            case PlayerState.Idle:
+                IDle();
+                break;
+            case PlayerState.Run:
+                Run();
+                break;
+            case PlayerState.Attack:
+                Attack();
+                break;
+            case PlayerState.Dead:
+                Dead();
+                break;
+            case PlayerState.JumpStart:
+                JumpStart();
+                break;
+            case PlayerState.JumpInAir:
+                JumpInAir();
+                break;
+            case PlayerState.JumpEnd:
+                JumpEnd();
+                animatedSprite2D.Play("JumpEnd");
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+
+        MoveAndSlide();
+    }
+
+    private void ChangeVelocity()
+    {
+        Velocity = new Vector2(0, Velocity.Y);
+    }
+
+
+    private void ChangePlayState()
+    {
+        if (State == PlayerState.Idle)
+        {
+            //-->Attack
+            if (Input.IsActionJustPressed("Attack"))
+            {
+                State = PlayerState.Attack;
+            }
+            //-->Run
+            else if (Velocity.X != 0 || IsOnFloor())
+            {
+                State = PlayerState.Run;
+            }
+            //-->JumpStart
+            else if (Input.IsActionJustPressed("Jump") && IsOnFloor())
+            {
+                State = PlayerState.JumpStart;
+            }
+            //-->JumpInAir
+            else if (Velocity.Y != 0 && !IsOnFloor())
+            {
+                State = PlayerState.JumpInAir;
+            }
+            //-->Dead
+            else if (!IsSurvive)
+            {
+                State = PlayerState.Dead;
+                //TODO Dead
+            }
+
+        }
+        else if (State == PlayerState.Run)
+        {
+            //-->Attack
+            if (Input.IsActionJustPressed("Attack"))
+            {
+                State = PlayerState.Attack;
+            }
+            //-->Idle
+            else if (Velocity.X == 0 && IsOnFloor())
+            {
+                State = PlayerState.Idle;
+            }
+            //-->JumpStart
+            else if (Input.IsActionJustPressed("Jump") && IsOnFloor())
+            {
+                State = PlayerState.JumpStart;
+            }
+            //-->JumpInAir
+            else if (Velocity.Y != 0 || !IsOnFloor())
+            {
+                State = PlayerState.JumpInAir;
+            }
+            //-->Dead
+            else if (!IsSurvive)
+            {
+                State = PlayerState.Dead;
+                //TODO Dead
+            }
+        }
+        else if (State == PlayerState.Attack)
+        {
+            //must complete the attack animation
+            //--->Idle
+            if (animatedSprite2D.Animation == "Attack" && animatedSprite2D.Frame == 7)
+            {
+                State = PlayerState.Idle;
+            }
+        }
+        else if (State == PlayerState.JumpStart)
+        {
+            //must complete the JumpStart animation
+            //--->JumpInAir
+            if (animatedSprite2D.Animation == "JumpStart" && animatedSprite2D.Frame == 3)
+            {
+                State = PlayerState.JumpInAir;
+            }
+        }
+        else if (State == PlayerState.JumpInAir)
+        {
+            //--->JumpEnd
+            if (Velocity.Y == 0 || IsOnFloor())
+            {
+                State = PlayerState.JumpEnd;
+            }
+            //-->Attack
+            else if (Input.IsActionJustPressed("Attack"))
+            {
+                State = PlayerState.Attack;
+            }
+            //-->Dead
+            else if (!IsSurvive)
+            {
+                State = PlayerState.Dead;
+                //TODO Dead
+            }
+        }
+        else if (State == PlayerState.JumpEnd)
+        {
+            //must complete the JumpEnd animation
+            //--->Idle
+            if (animatedSprite2D.Animation == "JumpEnd" && animatedSprite2D.Frame == 3)
+                State = PlayerState.Idle;
+        }
+
+    }
+
+    //Flip H  when change direction
+
+    private void ChangeFlipH()
+    {
+        if (Velocity.X != 0)
+            animatedSprite2D.FlipH = Velocity.X < 0;
+    }
+
+    #region Animation
+    //only play for once
+    private void Dead()
+    {
+        animatedSprite2D.Play("Dead");
+    }
+
+    //once the animation is finished, it will automatically return to the idle state
+    private void Attack()
+    {
+        animatedSprite2D.Play("Attack");
+    }
+
+    //cycle play,only change to JumpEnd when the player is on the ground 
+    private void JumpInAir()
+    {
+        animatedSprite2D.Play("JumpInAir");
+    }
+
+    //only play for once
+    //once the animation is finished, it will automatically return to the idle state
+    private void JumpEnd()
+    {
+        animatedSprite2D.Play("JumpEnd");
+    }
+
+    //only play for once
+    //once the animation is finished, it will only change to JumpInAir
+    private void JumpStart()
+    {
+        animatedSprite2D.Play("JumpStart");
+    }
+
+    //cycle play
+    //only play when the Velocity.X is not 0
+    private void Run()
+    {
+        if (animatedSprite2D.Animation != "Run")
+            animatedSprite2D.Play("Run");
+        if (Velocity.X != 0)
+            animatedSprite2D.FlipH = Velocity.X < 0;
+    }
+
+    //cycle play
+    //only play when the Velocity.X is 0
+    private void IDle()
+    {
+        if (animatedSprite2D.Animation != "Idle")
+            animatedSprite2D.Play("Idle");
+    }
+
+
+    public void AddGravity()
+    {
+        Vector2 velocity = Velocity;
+        if (!IsOnFloor())
+            velocity.Y += gravity * (float)delta;
+        else
+            velocity.Y = 0;
+        Velocity = velocity;
+    }
+    #endregion
+
+}

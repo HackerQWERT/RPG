@@ -1,17 +1,14 @@
 using Godot;
-using System;
 
-public partial class new_script : Node
+public partial class Node : Godot.Node
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		System.Console.WriteLine("Hello World!");
-		GD.Print("Hello World!");
-	}
+	private AnimatedSprite2D _animatedSprite;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _Input(InputEvent @event)
 	{
+		PlayerState playerState = PlayerState.Idle;
+
+		GD.Print(@event.AsText());
+		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite");
 	}
 }

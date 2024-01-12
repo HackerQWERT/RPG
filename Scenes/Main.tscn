@@ -1,6 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://mpic0btyth4v"]
+[gd_scene load_steps=4 format=3 uid="uid://mpic0btyth4v"]
 
 [ext_resource type="Script" path="res://Scripts/new_script.cs" id="1_ululk"]
+[ext_resource type="Texture2D" uid="uid://cakjp28mq0bwy" path="res://ARTS/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="2_4t1gc"]
+[ext_resource type="PackedScene" uid="uid://bdaqfngallbn" path="res://Perfab/Player.tscn" id="3_gpp8w"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ululk")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="Node" parent="."]
+
+[node name="Background2" type="TextureRect" parent="Background"]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4t1gc")
+
+[node name="Player" parent="." instance=ExtResource("3_gpp8w")]
+position = Vector2(246, 231)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(480, 272)
+
+[node name="Background2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(436, 271)
+scale = Vector2(2.39583, 2.37132)
+texture = ExtResource("2_4t1gc")
+centered = false
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(246, 231)
+format = 2
