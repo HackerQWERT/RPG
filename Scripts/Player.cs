@@ -9,6 +9,8 @@ public partial class Player : CharacterBody2D
     public bool IsSurvive = true;
     public double delta;
 
+    //二段跳
+    public bool CanDoubleJump = true;
     public float JumpVelocity = -400.0f;
 
     public PlayerState State { get; private set; }
@@ -37,7 +39,7 @@ public partial class Player : CharacterBody2D
                 GD.Print("Move Right");
             }
             //检测跳跃
-            if (eventKey.IsActionPressed("Jump") && IsOnFloor())
+            if (eventKey.IsActionPressed("Jump") && IsOnFloor() || eventKey.IsActionPressed("Jump") && CanDoubleJump)
             {
                 Velocity = new Vector2(Velocity.X, JumpVelocity);
                 GD.Print("Jump");
@@ -190,6 +192,12 @@ public partial class Player : CharacterBody2D
         }
         else if (State == PlayerState.JumpInAir)
         {
+            //-->JmpStart 二段跳
+            if (Input.IsActionJustPressed("Jump") && CanDoubleJump)
+            {
+                State = PlayerState.JumpStart;
+                CanDoubleJump = false;
+            }
             //--->JumpEnd
             if (Velocity.Y == 0 || IsOnFloor())
             {
@@ -212,7 +220,10 @@ public partial class Player : CharacterBody2D
             //must complete the JumpEnd animation
             //--->Idle
             if (animatedSprite2D.Animation == "JumpEnd" && animatedSprite2D.Frame == 2)
+            {
                 State = PlayerState.Idle;
+                CanDoubleJump = true;
+            }
         }
 
     }

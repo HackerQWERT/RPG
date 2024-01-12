@@ -18,7 +18,6 @@ offset_bottom = 40.0
 [node name="Background" type="Node" parent="."]
 
 [node name="Background2" type="TextureRect" parent="Background"]
-visible = false
 clip_contents = true
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +27,7 @@ grow_vertical = 2
 texture = ExtResource("2_4t1gc")
 
 [node name="Player" parent="." instance=ExtResource("3_gpp8w")]
-position = Vector2(147, -122)
+position = Vector2(234, 208)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false
