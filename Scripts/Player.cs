@@ -5,11 +5,11 @@ public partial class Player : CharacterBody2D
 {
 
     [Export]
-    public const float Speed = 300.0f;
+    public float Speed = 300.0f;
     public bool IsSurvive = true;
     public double delta;
 
-    public const float JumpVelocity = -400.0f;
+    public float JumpVelocity = -400.0f;
 
     public PlayerState State { get; private set; }
 
@@ -23,15 +23,6 @@ public partial class Player : CharacterBody2D
 
     public override void _Input(InputEvent @event)
     {
-        // if (@event is InputEventKey eventKey)
-        // {
-        //     if (eventKey.IsActionPressed("ui_cancel")   // Pressed Escape.
-        //         || eventKey.IsActionPressed("ui_select") // Pressed Enter.
-        //         || eventKey.IsActionPressed("ui_pause")) // Pressed Space.
-        //     {
-        //         GetTree().Quit();
-        //     }
-        // }
         if (@event is InputEventKey eventKey)
         {
             //检测左右移动
@@ -45,8 +36,19 @@ public partial class Player : CharacterBody2D
                 Velocity = new Vector2(Speed, Velocity.Y);
                 GD.Print("Move Right");
             }
+            //检测跳跃
+            if (eventKey.IsActionPressed("Jump") && IsOnFloor())
+            {
+                Velocity = new Vector2(Velocity.X, JumpVelocity);
+                GD.Print("Jump");
+            }
             //弹开取消移动
-            if (eventKey.IsActionReleased("Left") || eventKey.IsActionReleased("Right"))
+            if (eventKey.IsActionReleased("Left") && Velocity.X < 0)
+            {
+                Velocity = new Vector2(0, Velocity.Y);
+                GD.Print("Stop Move");
+            }
+            if (eventKey.IsActionReleased("Right") && Velocity.X > 0)
             {
                 Velocity = new Vector2(0, Velocity.Y);
                 GD.Print("Stop Move");
@@ -56,21 +58,20 @@ public partial class Player : CharacterBody2D
             {
                 GD.Print("Attack");
             }
-            //检测跳跃
-            if (eventKey.IsActionPressed("Jump"))
-            {
-                GD.Print("Jump");
-            }
 
         }
     }
 
     public override void _PhysicsProcess(double delta)
     {
+        if (Velocity.Y != 0)
+        {
+            GD.Print("velocity: " + Velocity);
+        }
 
         this.delta = delta;
         // Add gravity.
-        // AddGravity();
+        AddGravity();
         //Flip X  when change direction
         ChangeFlipH();
         //Change the state of the player
@@ -99,18 +100,12 @@ public partial class Player : CharacterBody2D
                 break;
             case PlayerState.JumpEnd:
                 JumpEnd();
-                animatedSprite2D.Play("JumpEnd");
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
 
         MoveAndSlide();
-    }
-
-    private void ChangeVelocity()
-    {
-        Velocity = new Vector2(0, Velocity.Y);
     }
 
 
@@ -124,7 +119,7 @@ public partial class Player : CharacterBody2D
                 State = PlayerState.Attack;
             }
             //-->Run
-            else if (Velocity.X != 0 || IsOnFloor())
+            else if (Velocity.X != 0 && IsOnFloor())
             {
                 State = PlayerState.Run;
             }
@@ -216,7 +211,7 @@ public partial class Player : CharacterBody2D
         {
             //must complete the JumpEnd animation
             //--->Idle
-            if (animatedSprite2D.Animation == "JumpEnd" && animatedSprite2D.Frame == 3)
+            if (animatedSprite2D.Animation == "JumpEnd" && animatedSprite2D.Frame == 2)
                 State = PlayerState.Idle;
         }
 
@@ -287,8 +282,6 @@ public partial class Player : CharacterBody2D
         Vector2 velocity = Velocity;
         if (!IsOnFloor())
             velocity.Y += gravity * (float)delta;
-        else
-            velocity.Y = 0;
         Velocity = velocity;
     }
     #endregion
