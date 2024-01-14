@@ -1,7 +1,7 @@
 public enum PlayerState
 {
     Idle,
-    Run,
+    Running,
     JumpStart,
     JumpEnd,
     JumpInAir,

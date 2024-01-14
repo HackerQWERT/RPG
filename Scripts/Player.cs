@@ -85,8 +85,8 @@ public partial class Player : CharacterBody2D
             case PlayerState.Idle:
                 IDle();
                 break;
-            case PlayerState.Run:
-                Run();
+            case PlayerState.Running:
+                Running();
                 break;
             case PlayerState.Attack:
                 Attack();
@@ -120,10 +120,10 @@ public partial class Player : CharacterBody2D
             {
                 State = PlayerState.Attack;
             }
-            //-->Run
+            //-->Running
             else if (Velocity.X != 0 && IsOnFloor())
             {
-                State = PlayerState.Run;
+                State = PlayerState.Running;
             }
             //-->JumpStart
             else if (Input.IsActionJustPressed("Jump") && IsOnFloor())
@@ -143,7 +143,7 @@ public partial class Player : CharacterBody2D
             }
 
         }
-        else if (State == PlayerState.Run)
+        else if (State == PlayerState.Running)
         {
             //-->Attack
             if (Input.IsActionJustPressed("Attack"))
@@ -271,10 +271,10 @@ public partial class Player : CharacterBody2D
 
     //cycle play
     //only play when the Velocity.X is not 0
-    private void Run()
+    private void Running()
     {
-        if (animatedSprite2D.Animation != "Run")
-            animatedSprite2D.Play("Run");
+        if (animatedSprite2D.Animation != "Running")
+            animatedSprite2D.Play("Running");
         if (Velocity.X != 0)
             animatedSprite2D.FlipH = Velocity.X < 0;
     }
