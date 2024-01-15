@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://7d3f2mpifje1"]
+
+[ext_resource type="Texture2D" uid="uid://ciyswdasx38io" path="res://ARTS/Assets/decorations/Mossy - BackgroundDecoration.png" id="1_atura"]
+
+[resource]
+atlas = ExtResource("1_atura")
+region = Rect2(2384, 1410, 1682, 910)

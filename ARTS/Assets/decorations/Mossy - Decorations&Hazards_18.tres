@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b6kc6w0rq5kv3"]
+
+[ext_resource type="Texture2D" uid="uid://ch1bqjjrnoaej" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards.png" id="1_f3dl3"]
+
+[resource]
+atlas = ExtResource("1_f3dl3")
+region = Rect2(882, 3645, 60, 397)
