@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://3u8o7y2qac1j"]
+
+[ext_resource type="Texture2D" uid="uid://bgbwh10xbgvdy" path="res://ARTS/Assets/decorations/Mossy - FloatingPlatforms.png" id="1_u8al8"]
+
+[resource]
+atlas = ExtResource("1_u8al8")
+region = Rect2(113, 1110, 281, 275)

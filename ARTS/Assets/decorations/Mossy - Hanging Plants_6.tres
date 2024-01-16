@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://durwpwo1u7sko"]
+
+[ext_resource type="Texture2D" uid="uid://plmrb3f761j8" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants.png" id="1_18lvg"]
+
+[resource]
+atlas = ExtResource("1_18lvg")
+region = Rect2(89, 1400, 465, 1374)
