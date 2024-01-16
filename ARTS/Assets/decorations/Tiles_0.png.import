@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://whdmbf5thvg2"
-path="res://.godot/imported/Dark-Tree.png-3906ef6bef8317ea3c782d1295ef28bd.ctex"
+uid="uid://bxddjkc6oyrgp"
+path="res://.godot/imported/Tiles_0.png-f242fed5fd271bdff2eba24e69a5c133.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ARTS/Trees/Dark-Tree.png"
-dest_files=["res://.godot/imported/Dark-Tree.png-3906ef6bef8317ea3c782d1295ef28bd.ctex"]
+source_file="res://ARTS/Assets/decorations/Tiles_0.png"
+dest_files=["res://.godot/imported/Tiles_0.png-f242fed5fd271bdff2eba24e69a5c133.ctex"]
 
 [params]
 
