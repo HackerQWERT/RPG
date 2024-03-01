@@ -12,8 +12,8 @@ script = ExtResource("1_4bdmn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_qjw8y")
-animation = &"Running"
-frame_progress = 0.160406
+animation = &"SpellCast"
+frame_progress = 0.955668
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)

@@ -253,7 +253,7 @@ public partial class Player : CharacterBody2D
     private void JumpInAir()
     {
         animatedSprite2D.Play("JumpInAir");
-    }
+    } 
 
     //only play for once
     //once the animation is finished, it will automatically return to the idle state

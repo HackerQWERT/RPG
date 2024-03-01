@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dhdxbqn48onn" path="res://ARTS/Assets/decorations/Tree-Assets.png" id="2_niblo"]
 [ext_resource type="Texture2D" uid="uid://bpylvcoiu7vwn" path="res://ARTS/Assets/decorations/Buildings.png" id="4_vud24"]
 [ext_resource type="Texture2D" uid="uid://bya55xglkua60" path="res://ARTS/Assets/decorations/Hive.png" id="5_ji4ke"]
-[ext_resource type="Texture2D" uid="uid://qfnpctmqly4r" path="res://ARTS/Assets/decorations/Interior-01.png" id="8_j5bnc"]
+[ext_resource type="Texture2D" uid="uid://qfnpctmqly4r" path="res://ARTS/Assets/decorations/Interior.png" id="8_j5bnc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8v2qn"]
 
