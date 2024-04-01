@@ -1,6 +1,7 @@
-[gd_scene load_steps=100 format=3 uid="uid://c4l3hth3688gn"]
+[gd_scene load_steps=151 format=3 uid="uid://c4l3hth3688gn"]
 
 [ext_resource type="TileSet" uid="uid://cc2vk4b1swb3t" path="res://Tileset/MossyTileSet.tres" id="1_kwe14"]
+[ext_resource type="Script" path="res://Scripts/BlueWizard.cs" id="1_rmeli"]
 [ext_resource type="Texture2D" uid="uid://bx5mq78u2x1ss" path="res://ARTS/Character/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00000.png" id="2_1gfhu"]
 [ext_resource type="Texture2D" uid="uid://dshhkrmi2uj4b" path="res://ARTS/Character/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00000.png" id="2_fyw2f"]
 [ext_resource type="Texture2D" uid="uid://b642vrjgyb1bc" path="res://ARTS/Character/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00001.png" id="3_hgb2p"]
@@ -97,6 +98,56 @@
 [ext_resource type="Texture2D" uid="uid://ea0pnf8r5cfl" path="res://ARTS/Character/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00017.png" id="95_g0d14"]
 [ext_resource type="Texture2D" uid="uid://dd0xs1yq78p6r" path="res://ARTS/Character/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00018.png" id="96_ldqcl"]
 [ext_resource type="Texture2D" uid="uid://ybiebppdggvc" path="res://ARTS/Character/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00019.png" id="97_42vlg"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.cs" id="99_5b4f7"]
+[ext_resource type="Texture2D" uid="uid://b84gmrwmy18wb" path="res://ARTS/Assets/decorations/Mossy - BackgroundDecoration_5.tres" id="100_savmx"]
+[ext_resource type="Texture2D" uid="uid://7d3f2mpifje1" path="res://ARTS/Assets/decorations/Mossy - BackgroundDecoration_4.tres" id="101_mte6l"]
+[ext_resource type="Texture2D" uid="uid://b8vvgykrkjkos" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_2.tres" id="103_2vahh"]
+[ext_resource type="Texture2D" uid="uid://brl0pnt01yivo" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_3.tres" id="104_pnt26"]
+[ext_resource type="Texture2D" uid="uid://bovggjivxmt8m" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_4.tres" id="105_diase"]
+[ext_resource type="Texture2D" uid="uid://btmwbeyqsttni" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_5.tres" id="106_85qf0"]
+[ext_resource type="Texture2D" uid="uid://dpdafnc0oa6ls" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_6.tres" id="107_stqc1"]
+[ext_resource type="Texture2D" uid="uid://y71hjymkhld7" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_7.tres" id="108_8rk7e"]
+[ext_resource type="Texture2D" uid="uid://b7qjo3obynrgj" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_8.tres" id="109_bd7ti"]
+[ext_resource type="Texture2D" uid="uid://ce00xl3txp116" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_9.tres" id="110_p5nte"]
+[ext_resource type="Texture2D" uid="uid://b47u3t1m0oxdh" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_10.tres" id="111_1u207"]
+[ext_resource type="Texture2D" uid="uid://2i77vh2kvsob" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_11.tres" id="112_wi3wp"]
+[ext_resource type="Texture2D" uid="uid://dal4bmif8trlo" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_12.tres" id="113_h7t8f"]
+[ext_resource type="Texture2D" uid="uid://dpimhifxyqn7f" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_13.tres" id="114_2k7go"]
+[ext_resource type="Texture2D" uid="uid://cxsvnohfk6pf6" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_14.tres" id="115_k57nh"]
+[ext_resource type="Texture2D" uid="uid://dy4i2omxg82ek" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_15.tres" id="116_o3ib2"]
+[ext_resource type="Texture2D" uid="uid://io7in8wyii2i" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_17.tres" id="117_a1rdc"]
+[ext_resource type="Texture2D" uid="uid://d270p5qx37m3r" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_16.tres" id="117_vjgxw"]
+[ext_resource type="Texture2D" uid="uid://bt60di78jcwto" path="res://ARTS/BackGround/background_layer_1.png" id="118_0mu83"]
+[ext_resource type="Texture2D" uid="uid://b6kc6w0rq5kv3" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_18.tres" id="118_xxen0"]
+[ext_resource type="Texture2D" uid="uid://cp1jl2w3vkd0n" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_19.tres" id="119_s31jc"]
+[ext_resource type="Texture2D" uid="uid://dldjweqhkmn15" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_20.tres" id="120_dcfm6"]
+[ext_resource type="Texture2D" uid="uid://p34ptn6okg8c" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_21.tres" id="121_t644x"]
+[ext_resource type="Texture2D" uid="uid://b08278xgay34a" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_22.tres" id="122_3uvs5"]
+[ext_resource type="Texture2D" uid="uid://3alo5k1y8syn" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_23.tres" id="123_wqvi0"]
+[ext_resource type="Texture2D" uid="uid://bn3n84nfwkpou" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_24.tres" id="124_c05c0"]
+[ext_resource type="Texture2D" uid="uid://wlf3h5rwqij2" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_25.tres" id="125_i3d0m"]
+[ext_resource type="Texture2D" uid="uid://clbt8ciyld61y" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_26.tres" id="126_40skr"]
+[ext_resource type="Texture2D" uid="uid://xpkfka8ybal4" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_27.tres" id="127_mjp4p"]
+[ext_resource type="Texture2D" uid="uid://bmssctmjgjj58" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_28.tres" id="128_c3q0n"]
+[ext_resource type="Texture2D" uid="uid://gb5fogn3qim1" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_29.tres" id="129_3f15m"]
+[ext_resource type="Texture2D" uid="uid://8wnfmquudiib" path="res://ARTS/Assets/decorations/Mossy - Decorations&Hazards_31.tres" id="130_tof7i"]
+[ext_resource type="Texture2D" uid="uid://bhbs7ogfyvkod" path="res://ARTS/Assets/decorations/Mossy - FloatingPlatforms_1.tres" id="131_u6vmp"]
+[ext_resource type="Texture2D" uid="uid://d1n7ck8315n6n" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants_1.tres" id="132_g8nbf"]
+[ext_resource type="Texture2D" uid="uid://dsplk3g5t41a4" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants_2.tres" id="133_j87wa"]
+[ext_resource type="Texture2D" uid="uid://dot2y0nus6odb" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants_3.tres" id="134_1eurg"]
+[ext_resource type="Texture2D" uid="uid://ducxlh70nudfe" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants_4.tres" id="135_sygnc"]
+[ext_resource type="Texture2D" uid="uid://durwpwo1u7sko" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants_6.tres" id="136_k6yg4"]
+[ext_resource type="Texture2D" uid="uid://d6sshil4f604" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants_7.tres" id="137_8cydh"]
+[ext_resource type="Texture2D" uid="uid://7kmaabqwr4u7" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants_8.tres" id="138_srix7"]
+[ext_resource type="Texture2D" uid="uid://butu6ec7ovodq" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants_9.tres" id="139_und38"]
+[ext_resource type="Texture2D" uid="uid://duoc6k2fgqw7i" path="res://ARTS/Assets/decorations/Mossy - Hanging Plants_10.tres" id="141_or5x4"]
+[ext_resource type="Texture2D" uid="uid://c45ppqce3q626" path="res://ARTS/Assets/decorations/Mossy - MossyHills_1.tres" id="142_eec7f"]
+[ext_resource type="Texture2D" uid="uid://cch5lcgq5b7bn" path="res://ARTS/Assets/decorations/Mossy - MossyHills_2.tres" id="143_je8t7"]
+[ext_resource type="Texture2D" uid="uid://brdjipvyg6j0l" path="res://ARTS/Assets/decorations/Mossy - MossyHills_3.tres" id="144_luh7k"]
+[ext_resource type="Texture2D" uid="uid://tnoq845wlksl" path="res://ARTS/Assets/decorations/Mossy - MossyHills_5.tres" id="145_wcmia"]
+[ext_resource type="Texture2D" uid="uid://c2dyjrpnurs0i" path="res://ARTS/Assets/decorations/Mossy - MossyHills_6.tres" id="146_p3x1g"]
+[ext_resource type="Texture2D" uid="uid://cox7sxv46xmgh" path="res://ARTS/Assets/decorations/Mossy - MossyHills_7.tres" id="147_812ep"]
+[ext_resource type="SpriteFrames" uid="uid://cyyfrffn2gr74" path="res://SpriteFrames/PlantFrames.tres" id="148_q1sd2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3ncx"]
 animations = [{
@@ -423,25 +474,440 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animatedSprite2D")]
 z_index = 5
-position = Vector2(0, -433)
+position = Vector2(43337, -17987)
+collision_mask = 4
+collision_priority = 10.0
+platform_floor_layers = 4
+script = ExtResource("1_rmeli")
+Speed = 1400.0
+JumpVelocity = -2300.0
+animatedSprite2D = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_g3ncx")
-animation = &"Walk"
-frame_progress = 0.349545
+animation = &"Dash"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 scale = Vector2(-5.35313, 9.88201)
 shape = SubResource("CapsuleShape2D_a3ywt")
+one_way_collision = true
 
 [node name="MossyTileMap" type="TileMap" parent="."]
-position = Vector2(246, 231)
+z_index = 1
+position = Vector2(955, 587)
 tile_set = ExtResource("1_kwe14")
 format = 2
 layer_0/name = "ForeGround"
 layer_0/z_index = 1
-layer_0/tile_data = PackedInt32Array(-393211, 196608, 0, -327675, 196608, 1, -262139, 196608, 2, -327673, 196608, 3, -327679, 196608, 0, -262143, 196608, 1, -196607, 196608, 2, -131071, 196608, 0, -65535, 196608, 0, 1, 196608, 2, -327670, 196608, 0, -262134, 196608, 1, -196598, 196608, 2, -131069, 0, 0, -65533, 196608, 0, 3, 0, 2, -131068, 65536, 0, -65532, 196608, 0, 4, 65536, 2, -131067, 65536, 0, -65531, 196608, 0, 5, 65536, 2, -131066, 65536, 0, -65530, 196608, 0, 6, 65536, 2, -131065, 65536, 0, -65529, 196608, 0, 7, 65536, 2, -131064, 65536, 0, -65528, 196608, 0, 8, 65536, 2, -131063, 65536, 0, -65527, 65536, 1, 9, 65536, 2, -131062, 65536, 0, -65526, 65536, 1, 10, 65536, 2, -131061, 65536, 0, -65525, 65536, 1, 11, 65536, 2, -131060, 65536, 0, -65524, 65536, 1, 12, 65536, 2, -131059, 65536, 0, -65523, 65536, 1, 13, 65536, 2, -131058, 65536, 0, -65522, 65536, 1, 14, 65536, 2, -131057, 131072, 0, -65521, 131072, 1, 15, 131072, 2, -327677, 65536, 0, -262141, 65536, 0, -196605, 65536, 0, -65537, 196608, 0, -1, 196608, 0, -65536, 196608, 0, -65534, 196608, 0, 262150, 196608, 0, 262151, 196608, 0, 262152, 196608, 0, 262153, 196608, 0, 262154, 196608, 0, 262155, 196608, 0, 262156, 196608, 0, 262157, 196608, 0, 262158, 196608, 0, 262159, 196608, 0, 262160, 196608, 0, 262161, 196608, 0, 262162, 196608, 0, 262163, 196608, 0, 262164, 196608, 0, 262165, 196608, 0, 262166, 196608, 0, 262167, 196608, 0, 262168, 196608, 0, 262169, 196608, 0, 262170, 196608, 0, 262171, 196608, 0, -589828, 196608, 0, -589827, 196608, 0, -589826, 196608, 0, -589825, 196608, 0, -655360, 196608, 0, -655359, 196608, 0, -655358, 196608, 0, -589821, 196608, 0, -589820, 196608, 0, -589819, 196608, 0, -589818, 196608, 0, -589817, 196608, 0, -589816, 196608, 0, -589815, 196608, 0, -589814, 196608, 0, -589813, 196608, 0, -589812, 196608, 0, -589811, 196608, 0, -589810, 196608, 0, -589809, 196608, 0, -589808, 196608, 0, -589807, 196608, 0, -589806, 196608, 0, -589805, 196608, 0, -589804, 196608, 0, -589803, 196608, 0, -589802, 196608, 0, -589801, 196608, 0, -589800, 196608, 0, -589799, 196608, 0, -589798, 196608, 0, -589797, 196608, 0, -589796, 196608, 0, -524260, 196608, 0, -458724, 196608, 0, -458725, 196608, 0, -393189, 196608, 0, -327653, 196608, 0, -262118, 196608, 0, -196583, 196608, 0, -131048, 196608, 0, -65512, 196608, 0, 23, 196608, 0, 65558, 196608, 0, 131094, 196608, 0, 131093, 196608, 0, 131092, 196608, 0, 196628, 196608, 0, 327698, 196608, 0, 393233, 196608, 0, 393232, 196608, 0, -196592, 196608, 0, -196591, 196608, 0, -196590, 196608, 0, -196589, 196608, 0, -196588, 196608, 0, -196587, 196608, 0, -196586, 196608, 0, -65516, 196608, 0, -65515, 196608, 0, -65514, 196608, 0, -65517, 196608, 0, -65518, 196608, 0, -65519, 196608, 0, -65520, 196608, 0, -327667, 0, 0, -327666, 65536, 0, -327665, 131072, 0, -327664, 0, 0, -327663, 65536, 0, -327662, 131072, 0, -327661, 0, 0, -327660, 65536, 0, -327659, 131072, 0, -327658, 0, 0, -327657, 65536, 0, -327656, 131072, 0, -327678, 0, 0, -327676, 131072, 0, -262142, 0, 0, -262140, 131072, 0, -196606, 0, 0, -196604, 131072, 0, -262151, 262144, 2, -196615, 262144, 3, -262150, 327680, 2, -196614, 327680, 3, -131079, 262144, 2, -65543, 262144, 3, -131078, 327680, 2, -65542, 327680, 3, -131077, 262144, 2, -65541, 262144, 3, -131076, 327680, 2, -65540, 327680, 3, -5, 262144, 2, 65531, 262144, 3, -4, 327680, 2, 65532, 327680, 3, -3, 262144, 2, 65533, 262144, 3, -2, 327680, 2, 65534, 327680, 3, 131069, 262144, 2, 196605, 262144, 3, 131070, 327680, 2, 196606, 327680, 3, 131071, 262144, 2, 196607, 262144, 3, 65536, 327680, 2, 131072, 327680, 3, 131074, 131072, 1, 131075, 131072, 1, 131076, 131072, 1, 262134, 0, 0, 262135, 65536, 0, 262136, 131072, 0, 262137, 0, 0, 262138, 65536, 0, 262139, 131072, 0, 262140, 0, 0, 262141, 65536, 0, 262142, 131072, 0, 262143, 0, 0, 196608, 65536, 0, 196609, 131072, 0, 196610, 0, 0, 196611, 65536, 0, 196612, 131072, 0)
+layer_0/tile_data = PackedInt32Array(-131076, 196608, 4, -131075, 131072, 4, -131074, 196608, 4, -131073, 131072, 4, -196608, 196608, 4, -196607, 131072, 4, -131077, 131072, 4, -196606, 196608, 4, -196605, 131072, 4, -196604, 196608, 4, -196603, 131072, 4, -196602, 196608, 4, -196601, 131072, 4, -196600, 196608, 4, -196599, 131072, 4, -196598, 196608, 4, -327680, 0, 3, -327679, 65536, 3, -327678, 131072, 3, -196595, 131072, 4, -65541, 327680, 5, -65540, 196608, 5, -65539, 131072, 5, -65538, 196608, 5, -65537, 131072, 5, -131072, 196608, 5, -131065, 131072, 5, -131064, 196608, 5, -131063, 131072, 5, -131071, 131072, 5, -131070, 196608, 5, -131069, 131072, 5, -131068, 196608, 5, -131067, 131072, 5, -131066, 196608, 5, -131062, 196608, 5, -196597, 131072, 4, -196596, 196608, 4, -196594, 196608, 4, -196593, 131072, 4, -196592, 196608, 4, -196591, 131072, 4, -196590, 196608, 4, -196589, 131072, 4, -196588, 196608, 4, -196587, 131072, 4, -196586, 196608, 4, -196585, 131072, 4, -196584, 196608, 4, -196583, 131072, 4, -196582, 196608, 4, -196581, 131072, 4, -196580, 196608, 4, -196579, 131072, 4, -196578, 196608, 4, -196577, 131072, 4, -196576, 196608, 4, -196575, 131072, 4, -196574, 196608, 4, -196573, 131072, 4, -196572, 196608, 4, -196571, 131072, 4, -196570, 196608, 4, -196569, 131072, 4, -196568, 196608, 4, -196567, 131072, 4, -196566, 196608, 4, -196565, 131072, 4, -196564, 196608, 4, -196563, 131072, 4, -196562, 196608, 4, -196561, 131072, 4, -196560, 196608, 4, -393212, 0, 3, -393211, 65536, 3, -393210, 131072, 3, -524281, 0, 3, -524280, 65536, 3, -524279, 131072, 3, -524278, 0, 3, -524277, 65536, 3, -524276, 131072, 3, -393207, 196608, 3, -524274, 196608, 3, -524271, 65536, 3, -524270, 65536, 3, -524269, 65536, 3, -524268, 65536, 3, -524267, 65536, 3, -524266, 65536, 3, -524265, 65536, 3, -524264, 131072, 3, -524272, 0, 3, -458739, 196608, 0, -393203, 196608, 1, -327667, 196608, 2, -393205, 196608, 0, -327669, 196608, 1, -262133, 196608, 2, -393193, 0, 3, -393192, 65536, 3, -393191, 131072, 3, -327653, 196608, 3, -458723, 0, 3, -458722, 65536, 3, -458721, 131072, 3, -458720, 0, 3, -458719, 65536, 3, -458718, 131072, 3, -655327, 0, 3, -655326, 65536, 3, -655325, 131072, 3, -786401, 0, 3, -786400, 65536, 3, -786399, 131072, 3, -589786, 0, 3, -589785, 65536, 3, -589784, 131072, 3, -393178, 0, 3, -393177, 65536, 3, -393176, 131072, 3, -720856, 196608, 3, -917463, 196608, 0, -851927, 196608, 1, -786391, 196608, 2, -917477, 196608, 0, -851941, 196608, 1, -786405, 196608, 2, -720870, 196608, 0, -655334, 196608, 1, -589798, 196608, 2, -1048540, 196608, 0, -983004, 196608, 1, -917468, 196608, 2, -917460, 0, 3, -917459, 65536, 3, -917458, 131072, 3, -1114065, 196608, 1, -1048529, 196608, 2, -1179601, 196608, 0, -131061, 131072, 5, -131060, 196608, 5, -131059, 131072, 5, -131058, 196608, 5, -131057, 131072, 5, -131056, 196608, 5, -131055, 131072, 5, -131054, 196608, 5, -131053, 131072, 5, -131052, 196608, 5, -131051, 131072, 5, -131050, 196608, 5, -131049, 131072, 5, -131048, 196608, 5, -131047, 131072, 5, -131046, 196608, 5, -131045, 131072, 5, -131044, 196608, 5, -131043, 131072, 5, -131042, 196608, 5, -131041, 131072, 5, -131040, 196608, 5, -131039, 131072, 5, -131038, 196608, 5, -131037, 131072, 5, -131036, 196608, 5, -131035, 131072, 5, -131034, 196608, 5, -131033, 131072, 5, -131032, 196608, 5, -131031, 131072, 5, -131030, 196608, 5, -131029, 131072, 5, -131028, 196608, 5, -131027, 131072, 5, -131026, 196608, 5, -131025, 131072, 5, -131024, 196608, 5, -196559, 131072, 4, -196558, 196608, 4, -196557, 131072, 4, -196556, 196608, 4, -196555, 131072, 4, -196554, 196608, 4, -196553, 131072, 4, -196552, 196608, 4, -196551, 131072, 4, -196550, 196608, 4, -196549, 131072, 4, -196548, 196608, 4, -196547, 131072, 4, -196546, 196608, 4, -196545, 131072, 4, -196544, 196608, 4, -131023, 131072, 5, -131022, 196608, 5, -131021, 131072, 5, -131020, 327680, 5, -65484, 262144, 6, -131019, 131072, 5, -65483, 196608, 5, -131018, 196608, 5, -131017, 131072, 5, -131016, 196608, 5, -131015, 131072, 5, -131014, 196608, 5, -131013, 131072, 5, -131012, 196608, 5, -131011, 131072, 5, -131010, 196608, 5, -131009, 131072, 5, -131008, 196608, 5, -196543, 393216, 4, -131007, 393216, 5, -196540, 262144, 4, -131004, 262144, 5, -196539, 196608, 4, -131003, 327680, 5, -196538, 131072, 4, -131002, 131072, 5, -196537, 196608, 4, -131001, 196608, 5, -196536, 131072, 4, -131000, 131072, 5, -196535, 196608, 4, -130999, 196608, 5, -196534, 131072, 4, -130998, 131072, 5, -196533, 196608, 4, -130997, 196608, 5, -196532, 131072, 4, -130996, 131072, 5, -196531, 196608, 4, -130995, 196608, 5, -196530, 131072, 4, -130994, 131072, 5, -196529, 196608, 4, -130993, 196608, 5, -196528, 131072, 4, -130992, 131072, 5, -196527, 196608, 4, -130991, 196608, 5, -196526, 131072, 4, -130990, 131072, 5, -196525, 196608, 4, -130989, 196608, 5, -196524, 131072, 4, -196523, 196608, 4, -196522, 131072, 4, -196521, 196608, 4, -196520, 131072, 4, -196519, 196608, 4, -196518, 131072, 4, -130987, 196608, 5, -130986, 131072, 5, -130985, 196608, 5, -130984, 131072, 5, -130988, 131072, 5, -130983, 196608, 5, -130982, 131072, 5, -196517, 196608, 4, -130981, 196608, 5, -196516, 131072, 4, -130980, 131072, 5, -196515, 196608, 4, -130979, 196608, 5, -196514, 131072, 4, -130978, 131072, 5, -196513, 196608, 4, -130977, 196608, 5, -196512, 131072, 4, -130976, 131072, 5, -196511, 196608, 4, -130975, 196608, 5, -196510, 131072, 4, -130974, 131072, 5, -196509, 196608, 4, -130973, 196608, 5, -196508, 131072, 4, -130972, 131072, 5, -196507, 196608, 4, -130971, 196608, 5, -196506, 131072, 4, -130970, 131072, 5, -196505, 196608, 4, -130969, 196608, 5, -196504, 131072, 4, -130968, 131072, 5, -196503, 196608, 4, -130967, 196608, 5, -196502, 131072, 4, -130966, 131072, 5, -196501, 196608, 4, -130965, 196608, 5, -196500, 131072, 4, -130964, 131072, 5, -196499, 196608, 4, -130963, 196608, 5, -196498, 131072, 4, -130962, 131072, 5, -196497, 196608, 4, -130961, 196608, 5, -196496, 131072, 4, -130960, 131072, 5, -196495, 196608, 4, -130959, 196608, 5, -196494, 131072, 4, -130958, 131072, 5, -196493, 196608, 4, -130957, 196608, 5, -196492, 131072, 4, -130956, 131072, 5, -196491, 196608, 4, -130955, 196608, 5, -196490, 131072, 4, -130954, 131072, 5, -196489, 196608, 4, -130953, 196608, 5, -524180, 0, 3, -524179, 65536, 3, -524178, 131072, 3, -458641, 196608, 0, -393105, 196608, 1, -327569, 196608, 2, -524186, 0, 3, -524185, 65536, 3, -524184, 131072, 3, -720797, 0, 3, -720796, 65536, 3, -720795, 131072, 3, -524191, 0, 3, -524190, 65536, 3, -524189, 131072, 3, -524196, 0, 3, -524195, 65536, 3, -524194, 131072, 3, -655276, 0, 3, -655275, 65536, 3, -655274, 131072, 3, -458676, 0, 3, -458675, 65536, 3, -458674, 131072, 3, -786356, 0, 3, -786355, 65536, 3, -786354, 131072, 3, -982962, 0, 3, -982961, 65536, 3, -982960, 131072, 3, -1245102, 0, 3, -1245101, 65536, 3, -1245100, 131072, 3, -1114029, 0, 3, -1114028, 65536, 3, -1114027, 131072, 3, -1114025, 0, 3, -1114024, 65536, 3, -1114023, 131072, 3, -1245092, 0, 3, -1245091, 65536, 3, -1245090, 131072, 3, -1376160, 0, 3, -1376159, 65536, 3, -1376158, 131072, 3, -982943, 0, 3, -982942, 65536, 3, -982941, 131072, 3, -1441688, 0, 3, -1441687, 65536, 3, -1441686, 131072, 3, -1638294, 65536, 3, -1638293, 131072, 3, -1703838, 0, 3, -1703837, 65536, 3, -1703836, 131072, 3, -1114004, 0, 3, -1114003, 65536, 3, -1114002, 131072, 3, -1834918, 0, 3, -1834917, 65536, 3, -1834916, 131072, 3, -1834896, 0, 3, -1834895, 65536, 3, -1834894, 131072, 3, -1834926, 0, 3, -1834925, 65536, 3, -1834924, 131072, 3, -1638327, 0, 3, -1638326, 65536, 3, -1638325, 131072, 3, -1966012, 0, 3, -1966011, 65536, 3, -1966010, 131072, 3, -1703872, 0, 3, -1703871, 65536, 3, -1703870, 131072, 3, -1310656, 0, 3, -1310655, 65536, 3, -1310654, 131072, 3, -1638342, 0, 3, -1638341, 65536, 3, -1638340, 131072, 3, -2031557, 0, 3, -2031556, 65536, 3, -2031555, 131072, 3, -1310664, 0, 3, -1310663, 65536, 3, -1310662, 131072, 3, -1048513, 0, 3, -1048512, 65536, 3, -1048511, 131072, 3, -786366, 0, 3, -786365, 65536, 3, -786364, 131072, 3, -1179576, 0, 3, -1179575, 65536, 3, -1179574, 131072, 3, -524216, 0, 3, -524215, 65536, 3, -524214, 131072, 3, -458688, 65536, 3, -458689, 0, 3, -458687, 131072, 3, -1572780, 0, 3, -1572779, 65536, 3, -1572778, 131072, 3, -2097059, 0, 3, -2097058, 65536, 3, -2097057, 131072, 3, -1507238, 0, 3, -1507237, 65536, 3, -1507236, 131072, 3, -1179549, 0, 3, -1179548, 65536, 3, -1179547, 131072, 3, -2162588, 0, 3, -2162587, 65536, 3, -2162586, 131072, 3, -917413, 196608, 3, -1310630, 196608, 3, -1441713, 196608, 3, -1638305, 196608, 3, -1769376, 196608, 3, -1638295, 0, 3, -1769369, 196608, 3, -1376143, 196608, 3, -2097042, 196608, 3, -1048473, 196608, 3, -786341, 196608, 3, -786321, 196608, 3, -1113999, 196608, 3, -786348, 196608, 3, -1441724, 196608, 3, -2162614, 196608, 3, -2424763, 196608, 3, -2424768, 196608, 3, -2490291, 196608, 3, -2359215, 0, 0, -2293679, 0, 1, -2228143, 0, 2, -2359214, 65536, 0, -2293678, 65536, 1, -2228142, 65536, 2, -2359213, 131072, 0, -2293677, 131072, 1, -2228141, 131072, 2, -2555815, 131072, 4, -2490279, 327680, 5, -2555814, 196608, 4, -2490278, 196608, 5, -2555813, 131072, 4, -2490277, 131072, 5, -2555812, 196608, 4, -2490276, 196608, 5, -2555811, 131072, 4, -2490275, 131072, 5, -2555810, 196608, 4, -2490274, 196608, 5, -2555809, 131072, 4, -2490273, 131072, 5, -2555808, 196608, 4, -2490272, 196608, 5, -2555807, 131072, 4, -2555806, 196608, 4, -2490271, 131072, 5, -2490270, 196608, 5, -2555805, 131072, 4, -2555804, 196608, 4, -2490269, 131072, 5, -2490268, 196608, 5, -2555803, 131072, 4, -2555802, 196608, 4, -2490267, 131072, 5, -2490266, 196608, 5, -2555801, 131072, 4, -2555800, 196608, 4, -2490265, 131072, 5, -2490264, 196608, 5, -2555799, 131072, 4, -2555798, 196608, 4, -2490263, 131072, 5, -2490262, 196608, 5, -2555797, 131072, 4, -2555796, 196608, 4, -2490261, 131072, 5, -2490260, 196608, 5, -2555795, 131072, 4, -2555794, 196608, 4, -2490259, 131072, 5, -2490258, 196608, 5, -196488, 131072, 4, -130952, 131072, 5, -196487, 196608, 4, -130951, 196608, 5, -196486, 131072, 4, -130950, 131072, 5, -196485, 196608, 4, -130949, 196608, 5, -196484, 131072, 4, -130948, 131072, 5, -196483, 196608, 4, -130947, 196608, 5, -196482, 131072, 4, -130946, 131072, 5, -196481, 196608, 4, -130945, 196608, 5, -196480, 131072, 4, -130944, 131072, 5, -196479, 196608, 4, -130943, 196608, 5, -196478, 131072, 4, -130942, 131072, 5, -196477, 196608, 4, -130941, 196608, 5, -196476, 131072, 4, -130940, 131072, 5, -196475, 196608, 4, -130939, 196608, 5, -196474, 131072, 4, -130938, 131072, 5, -196473, 196608, 4, -130937, 196608, 5, -196472, 131072, 4, -130936, 131072, 5, -196471, 196608, 4, -130935, 196608, 5, -196470, 131072, 4, -130934, 131072, 5, -196469, 196608, 4, -130933, 196608, 5, -196468, 131072, 4, -130932, 131072, 5, -65471, 393216, 6, -65480, 196608, 5, -65479, 196608, 5, -65478, 196608, 5, -65472, 327680, 6, -65476, 196608, 5, -65475, 196608, 5, -65474, 196608, 5, -65473, 196608, 5, -65482, 196608, 5, -65481, 196608, 5, -65477, 196608, 5, -131078, 262144, 4, -65542, 262144, 5, -6, 262144, 6, -5, 393216, 6, -2555816, 262144, 4, -2490280, 262144, 5, -2424744, 262144, 6, -2424743, 393216, 6, -2555793, 131072, 4, -2490257, 131072, 5, -2555792, 196608, 4, -2490256, 196608, 5, -2555791, 131072, 4, -2490255, 131072, 5, -2555790, 196608, 4, -2490254, 196608, 5, -2555789, 131072, 4, -2490253, 131072, 5, -2555788, 196608, 4, -2490252, 196608, 5, -2555787, 131072, 4, -2490251, 131072, 5, -2555786, 196608, 4, -2490250, 196608, 5, -2555785, 131072, 4, -2490249, 131072, 5, -2555784, 196608, 4, -2490248, 196608, 5, -2555783, 131072, 4, -2490247, 131072, 5, -2555782, 196608, 4, -2490246, 196608, 5, -2555781, 131072, 4, -2490245, 131072, 5, -2555780, 196608, 4, -2490244, 196608, 5, -2555779, 131072, 4, -2490243, 131072, 5, -2555778, 196608, 4, -2490242, 196608, 5, -2555777, 131072, 4, -2490241, 131072, 5, -2555776, 196608, 4, -2490240, 196608, 5, -2555775, 131072, 4, -2490239, 131072, 5, -2555774, 196608, 4, -2490238, 196608, 5, -2555773, 131072, 4, -2490237, 131072, 5, -2555772, 196608, 4, -2490236, 196608, 5, -2555771, 131072, 4, -2490235, 131072, 5, -2555770, 196608, 4, -2490234, 196608, 5, -2555769, 131072, 4, -2490233, 131072, 5, -2555768, 196608, 4, -2490232, 196608, 5, -2555767, 131072, 4, -2490231, 131072, 5, -2555766, 196608, 4, -2490230, 196608, 5, -2555765, 131072, 4, -2490229, 131072, 5, -2555764, 196608, 4, -2490228, 196608, 5, -2555763, 131072, 4, -2490227, 131072, 5, -2555762, 196608, 4, -2490226, 196608, 5, -2555761, 131072, 4, -2490225, 131072, 5, -2555760, 196608, 4, -2490224, 196608, 5, -2555759, 131072, 4, -2490223, 131072, 5, -2555758, 196608, 4, -2490222, 196608, 5, -2555757, 131072, 4, -2490221, 131072, 5, -2555756, 196608, 4, -2490220, 196608, 5, -2555755, 131072, 4, -2490219, 131072, 5, -2555754, 196608, 4, -2490218, 196608, 5, -2555753, 131072, 4, -2490217, 131072, 5, -2555752, 196608, 4, -2490216, 196608, 5, -2555751, 131072, 4, -2490215, 131072, 5, -2555750, 196608, 4, -2490214, 196608, 5, -2555749, 131072, 4, -2490213, 131072, 5, -2555748, 196608, 4, -2490212, 196608, 5, -2883458, 0, 3, -2883457, 65536, 3, -2883456, 131072, 3, -2883455, 0, 3, -2883454, 65536, 3, -2883453, 131072, 3, -2883452, 0, 3, -2883451, 65536, 3, -2883450, 131072, 3, -2883449, 0, 3, -2883448, 65536, 3, -2883447, 131072, 3, -2752373, 196608, 3, -1900428, 196608, 0, -1834892, 196608, 1, -1769356, 196608, 2, -1572752, 196608, 0, -1507216, 196608, 1, -1441680, 196608, 2, -1572739, 196608, 0, -1507203, 196608, 1, -1441667, 196608, 2, -1507228, 196608, 0, -1441692, 196608, 1, -1376156, 196608, 2, -2228127, 196608, 0, -2162591, 196608, 1, -2097055, 196608, 2, -2359190, 196608, 0, -2293654, 196608, 1, -2228118, 196608, 2, -1965992, 196608, 0, -1900456, 196608, 1, -1834920, 196608, 2, -1966004, 196608, 0, -1900468, 196608, 1, -1834932, 196608, 2, -851861, 196608, 0, -786325, 196608, 1, -720789, 196608, 2, -2359174, 196608, 0, -2293638, 196608, 1, -2228102, 196608, 2, -65468, 262144, 6, -65467, 393216, 6, -327599, 196608, 3, -458662, 196608, 3, -655285, 196608, 3, -2031536, 196608, 3, -1900465, 196608, 3, -2162611, 196608, 3, -2293681, 196608, 3, -2424746, 196608, 3)
 layer_1/name = "BackGround"
 layer_1/tile_data = PackedInt32Array()
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("Target")]
+position = Vector2(0, -1068)
+scale = Vector2(388.288, 69.6592)
+zoom = Vector2(0.195, 0.195)
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("99_5b4f7")
+Target = NodePath("../CharacterBody2D")
+
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Mossy-Decorations&hazards6" type="Sprite2D" parent="Decorations"]
+position = Vector2(2830, -1256)
+texture = ExtResource("107_stqc1")
+
+[node name="Mossy-Decorations&hazards7" type="Sprite2D" parent="Decorations"]
+position = Vector2(4029, -2559)
+texture = ExtResource("108_8rk7e")
+
+[node name="Mossy-Decorations&hazards5" type="Sprite2D" parent="Decorations"]
+position = Vector2(8510, -2184)
+texture = ExtResource("106_85qf0")
+
+[node name="Mossy-Decorations&hazards4" type="Sprite2D" parent="Decorations"]
+position = Vector2(9211, -3230)
+texture = ExtResource("105_diase")
+
+[node name="Mossy-Decorations&hazards2" type="Sprite2D" parent="Decorations"]
+position = Vector2(5733, -1134)
+texture = ExtResource("103_2vahh")
+
+[node name="Mossy-BackgroundDecoration4" type="Sprite2D" parent="Decorations"]
+position = Vector2(11742, -3762)
+texture = ExtResource("101_mte6l")
+
+[node name="Mossy-BackgroundDecoration5" type="Sprite2D" parent="Decorations"]
+position = Vector2(16941, -6526)
+texture = ExtResource("100_savmx")
+
+[node name="Mossy-Decorations&hazards3" type="Sprite2D" parent="Decorations"]
+position = Vector2(15995, -1273)
+texture = ExtResource("104_pnt26")
+
+[node name="Mossy-Decorations&hazards8" type="Sprite2D" parent="Decorations"]
+position = Vector2(21654, -1358)
+texture = ExtResource("104_pnt26")
+
+[node name="Mossy-Decorations&hazards9" type="Sprite2D" parent="Decorations"]
+position = Vector2(19145, -2798)
+texture = ExtResource("105_diase")
+
+[node name="Mossy-Decorations&hazards10" type="Sprite2D" parent="Decorations"]
+position = Vector2(20243, -6376)
+texture = ExtResource("106_85qf0")
+
+[node name="Mossy-Decorations&hazards11" type="Sprite2D" parent="Decorations"]
+position = Vector2(11719, -1273)
+texture = ExtResource("107_stqc1")
+
+[node name="Mossy-Decorations&hazards12" type="Sprite2D" parent="Decorations"]
+position = Vector2(18475, -4665)
+texture = ExtResource("108_8rk7e")
+
+[node name="Mossy-Decorations&hazards13" type="Sprite2D" parent="Decorations"]
+position = Vector2(27323, -1207)
+texture = ExtResource("109_bd7ti")
+
+[node name="Mossy-Decorations&hazards14" type="Sprite2D" parent="Decorations"]
+position = Vector2(22719, -5424)
+texture = ExtResource("110_p5nte")
+
+[node name="Mossy-Decorations&hazards15" type="Sprite2D" parent="Decorations"]
+position = Vector2(18143, -3067)
+texture = ExtResource("111_1u207")
+
+[node name="Mossy-Decorations&hazards16" type="Sprite2D" parent="Decorations"]
+position = Vector2(21245, -2516)
+texture = ExtResource("111_1u207")
+
+[node name="Mossy-Decorations&hazards17" type="Sprite2D" parent="Decorations"]
+position = Vector2(13501, -2544)
+texture = ExtResource("111_1u207")
+
+[node name="Mossy-Decorations&hazards18" type="Sprite2D" parent="Decorations"]
+position = Vector2(21128, -4085)
+texture = ExtResource("111_1u207")
+
+[node name="Mossy-Decorations&hazards19" type="Sprite2D" parent="Decorations"]
+position = Vector2(21701, -5094)
+texture = ExtResource("112_wi3wp")
+
+[node name="Mossy-Decorations&hazards20" type="Sprite2D" parent="Decorations"]
+position = Vector2(19361, -1050)
+texture = ExtResource("112_wi3wp")
+
+[node name="Mossy-Decorations&hazards21" type="Sprite2D" parent="Decorations"]
+position = Vector2(24403, -6702)
+texture = ExtResource("112_wi3wp")
+
+[node name="Mossy-Decorations&hazards22" type="Sprite2D" parent="Decorations"]
+position = Vector2(16555, -3058)
+texture = ExtResource("112_wi3wp")
+
+[node name="Mossy-Decorations&hazards23" type="Sprite2D" parent="Decorations"]
+position = Vector2(17354, -1022)
+texture = ExtResource("113_h7t8f")
+
+[node name="Mossy-Decorations&hazards24" type="Sprite2D" parent="Decorations"]
+position = Vector2(14515, -5226)
+texture = ExtResource("113_h7t8f")
+
+[node name="Mossy-Decorations&hazards25" type="Sprite2D" parent="Decorations"]
+position = Vector2(15072, -2047)
+texture = ExtResource("113_h7t8f")
+
+[node name="Mossy-Decorations&hazards26" type="Sprite2D" parent="Decorations"]
+position = Vector2(15000, -4274)
+texture = ExtResource("114_2k7go")
+
+[node name="Mossy-Decorations&hazards27" type="Sprite2D" parent="Decorations"]
+position = Vector2(13933, -900)
+texture = ExtResource("115_k57nh")
+
+[node name="Mossy-Decorations&hazards28" type="Sprite2D" parent="Decorations"]
+position = Vector2(13169, -938)
+texture = ExtResource("116_o3ib2")
+
+[node name="Mossy-Decorations&hazards29" type="Sprite2D" parent="Decorations"]
+position = Vector2(13847, -2524)
+texture = ExtResource("116_o3ib2")
+
+[node name="Mossy-Decorations&hazards30" type="Sprite2D" parent="Decorations"]
+position = Vector2(14894, -1056)
+texture = ExtResource("117_vjgxw")
+
+[node name="Mossy-Decorations&hazards31" type="Sprite2D" parent="Decorations"]
+position = Vector2(20317, -1069)
+texture = ExtResource("117_vjgxw")
+
+[node name="Mossy-Decorations&hazards32" type="Sprite2D" parent="Decorations"]
+position = Vector2(25160, -995)
+texture = ExtResource("117_a1rdc")
+
+[node name="Mossy-Decorations&hazards33" type="Sprite2D" parent="Decorations"]
+position = Vector2(23895, -1062)
+texture = ExtResource("118_xxen0")
+
+[node name="Mossy-Decorations&hazards34" type="Sprite2D" parent="Decorations"]
+position = Vector2(28967, -1002)
+texture = ExtResource("119_s31jc")
+
+[node name="Mossy-Decorations&hazards35" type="Sprite2D" parent="Decorations"]
+position = Vector2(34142, -3310)
+texture = ExtResource("120_dcfm6")
+
+[node name="Mossy-Decorations&hazards36" type="Sprite2D" parent="Decorations"]
+position = Vector2(35981, -1498)
+texture = ExtResource("120_dcfm6")
+
+[node name="Mossy-Decorations&hazards37" type="Sprite2D" parent="Decorations"]
+position = Vector2(34262, -1402)
+texture = ExtResource("120_dcfm6")
+
+[node name="Mossy-Decorations&hazards38" type="Sprite2D" parent="Decorations"]
+position = Vector2(39826, -1551)
+texture = ExtResource("121_t644x")
+
+[node name="Mossy-Decorations&hazards39" type="Sprite2D" parent="Decorations"]
+position = Vector2(40733, -1573)
+texture = ExtResource("122_3uvs5")
+
+[node name="Mossy-Decorations&hazards40" type="Sprite2D" parent="Decorations"]
+position = Vector2(44941, -5011)
+texture = ExtResource("123_wqvi0")
+
+[node name="Mossy-Decorations&hazards41" type="Sprite2D" parent="Decorations"]
+position = Vector2(48839, -3655)
+texture = ExtResource("124_c05c0")
+
+[node name="Mossy-Decorations&hazards42" type="Sprite2D" parent="Decorations"]
+position = Vector2(51402, -3687)
+texture = ExtResource("125_i3d0m")
+
+[node name="Mossy-Decorations&hazards43" type="Sprite2D" parent="Decorations"]
+position = Vector2(52192, -5046)
+texture = ExtResource("126_40skr")
+
+[node name="Mossy-Decorations&hazards44" type="Sprite2D" parent="Decorations"]
+position = Vector2(53911, -3526)
+texture = ExtResource("127_mjp4p")
+
+[node name="Mossy-Decorations&hazards45" type="Sprite2D" parent="Decorations"]
+position = Vector2(54247, -3531)
+texture = ExtResource("128_c3q0n")
+
+[node name="Mossy-Decorations&hazards46" type="Sprite2D" parent="Decorations"]
+position = Vector2(51684, -3520)
+texture = ExtResource("129_3f15m")
+
+[node name="Mossy-Decorations&hazards47" type="Sprite2D" parent="Decorations"]
+position = Vector2(52720, -5042)
+texture = ExtResource("130_tof7i")
+
+[node name="Mossy-FloatingPlatforms1" type="Sprite2D" parent="Decorations"]
+position = Vector2(53617, -3547)
+texture = ExtResource("131_u6vmp")
+
+[node name="Mossy-FloatingPlatforms2" type="Sprite2D" parent="Decorations"]
+position = Vector2(52512, -5090)
+texture = ExtResource("131_u6vmp")
+
+[node name="Mossy-FloatingPlatforms3" type="Sprite2D" parent="Decorations"]
+position = Vector2(51054, -3504)
+texture = ExtResource("131_u6vmp")
+
+[node name="Mossy-FloatingPlatforms4" type="Sprite2D" parent="Decorations"]
+position = Vector2(52546, -978)
+texture = ExtResource("131_u6vmp")
+
+[node name="Mossy-HangingPlants1" type="Sprite2D" parent="Decorations"]
+position = Vector2(51323, -6642)
+texture = ExtResource("132_g8nbf")
+
+[node name="Mossy-HangingPlants2" type="Sprite2D" parent="Decorations"]
+position = Vector2(51633, -6284)
+texture = ExtResource("133_j87wa")
+
+[node name="Mossy-HangingPlants3" type="Sprite2D" parent="Decorations"]
+position = Vector2(53969, -6783)
+texture = ExtResource("133_j87wa")
+
+[node name="Mossy-HangingPlants4" type="Sprite2D" parent="Decorations"]
+position = Vector2(52245, -7732)
+texture = ExtResource("134_1eurg")
+
+[node name="Mossy-HangingPlants5" type="Sprite2D" parent="Decorations"]
+position = Vector2(56043, -4297)
+texture = ExtResource("134_1eurg")
+
+[node name="Mossy-HangingPlants6" type="Sprite2D" parent="Decorations"]
+position = Vector2(54027, -2681)
+texture = ExtResource("135_sygnc")
+
+[node name="Mossy-HangingPlants7" type="Sprite2D" parent="Decorations"]
+position = Vector2(51384, -2515)
+texture = ExtResource("136_k6yg4")
+
+[node name="Mossy-HangingPlants8" type="Sprite2D" parent="Decorations"]
+position = Vector2(57032, -2590)
+texture = ExtResource("137_8cydh")
+
+[node name="Mossy-HangingPlants9" type="Sprite2D" parent="Decorations"]
+position = Vector2(55507, -5301)
+texture = ExtResource("138_srix7")
+
+[node name="Mossy-HangingPlants10" type="Sprite2D" parent="Decorations"]
+position = Vector2(57470, -2401)
+texture = ExtResource("138_srix7")
+
+[node name="Mossy-HangingPlants12" type="Sprite2D" parent="Decorations"]
+position = Vector2(56216, -3409)
+texture = ExtResource("141_or5x4")
+
+[node name="Mossy-MossyHills1" type="Sprite2D" parent="Decorations"]
+position = Vector2(60015, -1017)
+texture = ExtResource("142_eec7f")
+
+[node name="Mossy-MossyHills2" type="Sprite2D" parent="Decorations"]
+position = Vector2(53251, -3467)
+texture = ExtResource("143_je8t7")
+
+[node name="Mossy-MossyHills3" type="Sprite2D" parent="Decorations"]
+position = Vector2(53876, -1013)
+texture = ExtResource("144_luh7k")
+
+[node name="Mossy-MossyHills5" type="Sprite2D" parent="Decorations"]
+position = Vector2(58357, -1013)
+texture = ExtResource("145_wcmia")
+
+[node name="Mossy-MossyHills6" type="Sprite2D" parent="Decorations"]
+position = Vector2(61801, -1013)
+texture = ExtResource("146_p3x1g")
+
+[node name="Mossy-MossyHills7" type="Sprite2D" parent="Decorations"]
+position = Vector2(57187, -3620)
+texture = ExtResource("147_812ep")
+
+[node name="Mossy-HangingPlants11" type="Sprite2D" parent="Decorations"]
+position = Vector2(57499, -5581)
+texture = ExtResource("139_und38")
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6100, -3938)
+scale = Vector2(61.7647, -73.161)
+texture = ExtResource("118_0mu83")
+
+[node name="AnimatedPlants" type="Node" parent="."]
+
+[node name="BlueFlower1_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(-2328, -854)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"BlueFlower1"
+autoplay = "BlueFlower1"
+frame_progress = 0.553911
+
+[node name="BlueFlower1_2" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(955, -2107)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"BlueFlower1"
+autoplay = "BlueFlower1"
+frame_progress = 0.602497
+
+[node name="BlueFlower2_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(-2217, -407)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"BlueFlower2"
+autoplay = "BlueFlower2"
+frame_progress = 0.481473
+
+[node name="BlueFlower2_2" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(3089, -2387)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"BlueFlower2"
+autoplay = "BlueFlower2"
+frame_progress = 0.259145
+
+[node name="Plant 1_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(4078, -1013)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"Plant 1"
+autoplay = "Plant 1"
+frame_progress = 0.499839
+
+[node name="Plant 2_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(4815, -1013)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"Plant 2"
+autoplay = "Plant 2"
+frame_progress = 0.0500664
+
+[node name="Plant 3_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(3558, -1013)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"Plant 3"
+autoplay = "Plant 3"
+frame_progress = 0.771318
+
+[node name="Plant 4_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(7394, -1068)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"Plant 4"
+autoplay = "Plant 4"
+frame_progress = 0.0827879
+
+[node name="Plant 5_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(8670, -1068)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"Plant 5"
+autoplay = "Plant 5"
+frame_progress = 0.724411
+
+[node name="Plant 6_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(5742, -2588)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"Plant 6"
+autoplay = "Plant 6"
+frame_progress = 0.795074
+
+[node name="Plant 7_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(6816, -2577)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"Plant 7"
+autoplay = "Plant 7"
+frame_progress = 0.255401
+
+[node name="Plant 8_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(11261, -2938)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"Plant 8 Poison"
+autoplay = "Plant 8 Poison"
+frame_progress = 0.875818
+
+[node name="Plant Wind 1_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(10163, -3586)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"Plant Wind 1"
+autoplay = "Plant Wind 1"
+frame_progress = 0.14758
+
+[node name="PlantJump_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(31603, -1013)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"PlantJump"
+autoplay = "PlantJump"
+frame_progress = 0.624814
+
+[node name="PlantJump2_1" type="AnimatedSprite2D" parent="AnimatedPlants"]
+position = Vector2(32308, -1013)
+sprite_frames = ExtResource("148_q1sd2")
+animation = &"PlantJump2"
+autoplay = "PlantJump2"
+frame_progress = 0.0451336
