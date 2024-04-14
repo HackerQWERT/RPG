@@ -22,12 +22,12 @@ public partial class DeathArea : Area2D
     {
         GD.Print("DeathArea.cs body entered");
         //随机播放鸡MusicPlayer或你干嘛哎呦MusicPlayer
-        Random random = new Random();
-        int randomNumber = random.Next(0, 2);
-        if (randomNumber == 0)
-            music.你干嘛哎呦MusicPlayer.Play();
-        else
-            music.鸡MusicPlayer.Play();
+        // Random random = new Random();
+        // int randomNumber = random.Next(0, 2);
+        // if (randomNumber == 0)
+        //     music.你干嘛哎呦MusicPlayer.Play();
+        // else
+        music.鸡MusicPlayer.Play();
 
         player.Position = 复活点.Position;
     }
