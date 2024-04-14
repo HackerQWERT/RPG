@@ -207,6 +207,7 @@ texture_region_size = Vector2i(512, 512)
 [resource]
 tile_size = Vector2i(512, 512)
 uv_clipping = true
+occlusion_layer_0/light_mask = 7
 physics_layer_0/collision_layer = 4
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_1bo78")
 terrain_set_0/mode = 0

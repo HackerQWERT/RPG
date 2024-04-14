@@ -1,0 +1,11 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://bddtlv4h27g3c"]
+
+[resource]
+particle_flag_disable_z = true
+gravity = Vector3(-50, 50, 0)
+linear_accel_min = -60.25
+linear_accel_max = 100.0
+radial_accel_min = -42.45
+radial_accel_max = 15.55
+scale_min = 47.35
+scale_max = 74.15

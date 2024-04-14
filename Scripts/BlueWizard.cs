@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 
 public partial class BlueWizard : CharacterBody2D
@@ -39,11 +40,17 @@ public partial class BlueWizard : CharacterBody2D
 				break;
 			case BlueWizardStates.Dash:
 				if (isDashing)
-				{
 					break;
+				else
+				{
+					isDashing = true;
+					await Task.Run(
+						async () =>
+						{
+							await Dash();
+						});
+					goto End;
 				}
-				await Dash();
-				break;
 			case BlueWizardStates.Jump:
 				Jump();
 				break;
@@ -77,7 +84,9 @@ public partial class BlueWizard : CharacterBody2D
 		}
 
 		Velocity = velocity;
+	End:
 		MoveAndSlide();
+		// Call the parent class _PhysicsProcess.
 	}
 
 	private void Jump()
@@ -92,12 +101,11 @@ public partial class BlueWizard : CharacterBody2D
 		animatedSprite2D.Play("Dash");
 		// 2.向前冲刺
 		var originalSpeed = Speed; // 假设Speed是你的角色移动速度的变量
-		Speed *= 2
-		; // 假设冲刺时速度翻倍
-		  // 3.停下
+		Speed *= 2; // 假设冲刺时速度翻倍
+					// 3.停下
 		await Task.Delay(800); // 等待0.8秒
 		Speed = originalSpeed; // 恢复原来的速度
-
+		isDashing = false;
 	}
 
 	private void Walk()
@@ -152,6 +160,7 @@ public partial class BlueWizard : CharacterBody2D
 			//-->Dash
 			if (Input.IsActionJustPressed("Dash"))
 			{
+
 				BlueWizardStates = BlueWizardStates.Dash;
 			}
 			//-->Idle
@@ -182,19 +191,18 @@ public partial class BlueWizard : CharacterBody2D
 			//->Dash
 			else if (Input.IsActionJustPressed("Dash"))
 			{
+
 				BlueWizardStates = BlueWizardStates.Dash;
 			}
 
 		}
 		else if (BlueWizardStates == BlueWizardStates.Dash)
 		{
-			isDashing = true;
 			//must complete the Dash animation
 			//--->JumpInAir
 			if (animatedSprite2D.Animation == "Dash" && animatedSprite2D.Frame == 15)
 			{
 				BlueWizardStates = BlueWizardStates.Idle;
-				isDashing = false;
 			}
 		}
 	}

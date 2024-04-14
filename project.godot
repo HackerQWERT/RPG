@@ -13,11 +13,12 @@ config_version=5
 config/name="RPG"
 run/main_scene="res://Scenes/New.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
-boot_splash/image="res://icon.svg"
+boot_splash/image="res://icon.png"
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -71,12 +72,19 @@ Dash={
 2d_render/layer_1="BackGround"
 2d_render/layer_2="ForeGround"
 2d_render/layer_3="Floor"
+2d_render/layer_4="Player"
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Mob"
 2d_physics/layer_3="Floor"
 2d_physics/layer_4="Gold"
 2d_physics/layer_5="PlayerAttack"
 2d_physics/layer_6="MobAttack"
+2d_physics/layer_7="空气墙"
+
+[physics]
+
+common/physics_ticks_per_second=200
+common/max_physics_steps_per_frame=20
 
 [rendering]
 
