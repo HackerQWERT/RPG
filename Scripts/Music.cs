@@ -22,7 +22,11 @@ public partial class Music : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (哇真的是你呀MusicPlayer.Playing == false && 背景MusicPlayer.Playing == false && 鸡你太美MusicPlayer.Playing == false && 鸡MusicPlayer.Playing == false && 你干嘛哎呦MusicPlayer.Playing == false)
+		if (哇真的是你呀MusicPlayer.Playing == false &&
+		 背景MusicPlayer.Playing == false &&
+		  鸡你太美MusicPlayer.Playing == false &&
+		   鸡MusicPlayer.Playing == false &&
+			你干嘛哎呦MusicPlayer.Playing == false)
 		{
 			背景MusicPlayer.Play();
 		}

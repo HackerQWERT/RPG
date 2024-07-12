@@ -9,7 +9,11 @@ public partial class DeathArea : Area2D
     public Node2D 复活点;
 
     [Export]
+    public Button 菜鸟Button;
+
+    [Export]
     public CharacterBody2D player;
+    public int deathCount = 0;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -20,6 +24,10 @@ public partial class DeathArea : Area2D
 
     private void OnBodyEntered(Node2D body)
     {
+        deathCount++;
+        if (deathCount >= 9)
+            菜鸟Button.Visible = true;
+
         GD.Print("DeathArea.cs body entered");
         //随机播放鸡MusicPlayer或你干嘛哎呦MusicPlayer
         // Random random = new Random();

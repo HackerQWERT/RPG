@@ -7,6 +7,7 @@ public enum BlueWizardStates
 
 }
 
+
 public enum SlimState
 {
     Idle,
